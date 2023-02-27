@@ -1,6 +1,8 @@
 const fs = require('fs');
 // const path = require('path');
 const inquirer = require('inquirer');
+const { default: Choices } = require('inquirer/lib/objects/choices');
+
 // const generateMarkdown = require('./utils/generateMarkdown');
 
 
@@ -52,9 +54,10 @@ inquirer.prompt([
       message: 'Please write a short description of your project?',
     },
     {
-      type: 'input',
+      type: 'list',
       name: 'license',
-      message: 'What license should your project have?',
+      message: 'What license should your project have?' ,
+      choices: ['mit','unlicense','mpl-2.0','ofl-1.1'],
     },
     {
       type: 'input',
@@ -79,7 +82,7 @@ inquirer.prompt([
 
     const READMETemplate = generateREADME(response);
 
-    fs.writeFile(`${response.name}.html`, READMETemplate, (error) =>
+    fs.writeFile(`${response.name}.md`, READMETemplate, (error) =>
       error ? console.error(error) : console.log(`Success!`)
     );
 });

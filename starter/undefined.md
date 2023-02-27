@@ -1,19 +1,19 @@
 #  Readme Generator
 
 ## Description
-  use node.js to generate Readme file
+  generate readme by using node.js
 
 ## Table of contents
 My Github is username : fitzfinoo
 my email address : fitzfinoo@gmail.com
 
 ## Installation
-node.js 
+node.js
 
 ## Test Run command
 node index
 
 
 ## License
-  not sure
+  mit
 END  
